@@ -1,5 +1,7 @@
 ﻿var restify = require('restify');
 var builder = require('botbuilder');
+var MICROSOFT_APP_ID = '9d14e131-f233-43e5-a311-198cf4f68107';
+var MICROSOFT_APP_PASSWORD = '1RZx6P7nbn2bDnGrdXHy5pO';
 
 // bot setup
 
@@ -18,7 +20,6 @@ var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
 
 // bot dialogs
-
 bot.dialog('/', function (session) {
     session.send("Hello World");
 });
