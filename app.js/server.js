@@ -1,5 +1,6 @@
 ﻿var restify = require('restify');
 var builder = require('botbuilder');
+
 var MICROSOFT_APP_ID = '9d14e131-f233-43e5-a311-198cf4f68107';
 var MICROSOFT_APP_PASSWORD = '1RZx6P7nbn2bDnGrdXHy5pO';
 
@@ -20,20 +21,38 @@ var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
 
 // bot dialogs
+var intents = new builder.IntentDialog();
 bot.dialog('/', intents);
 
-intents.matches(/^change name/i [
+intents.matches(/^change gem/i, [
     function (session) {
-        session.beginDialog('/profile');
+        session.beginDialog('/changeProfile');
     },
     function (session, results) {
         session.send('OK... changed your gem to %s', session.userData.name);
     }
-});
+]);
 
 intents.onDefault([
+    function (session, args, next) {
+        if (!session.userData.name) {
+            session.beginDialog('/profile');
+        } else {
+            next();
+        }
+    },
     function (session, results) {
-        session.send('Hello %s!', sessoin.userData.name);
+        session.send('Hello %s!', session.userData.name);
+    }
+]);
+
+bot.dialog('/changeProfile', [
+    function (session) {
+        builder.Prompts.text(session, 'OK, Which gem are you now?');
+    },
+    function (session, results) {
+        session.userData.name = results.response;
+        session.endDialog();
     }
 ]);
 
