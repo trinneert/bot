@@ -37,7 +37,7 @@ intents.onDefault([
     }
 ]);
 
-bot.dialog('/profile'. [
+bot.dialog('/profile', [
     function (session) {
         builder.Prompts.text(session, 'Hi! Which gem are you?');
     },
