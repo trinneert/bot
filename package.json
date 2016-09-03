@@ -6,10 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "tom trinneer",
   "license": "ISC",
   "dependencies": {
     "botbuilder": "^3.2.3",
     "restify": "^4.1.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trinneert/bot.git"
+  },
+  "keywords": [
+    "botframework",
+    "skype"
+  ],
+  "bugs": {
+    "url": "https://github.com/trinneert/bot/issues"
+  },
+  "homepage": "https://github.com/trinneert/bot#readme"
 }
