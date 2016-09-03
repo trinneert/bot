@@ -1,7 +1,7 @@
 ﻿
 var restify = require('restify');
 var builder = require('botbuilder');
-require('launch-json');
+//require('launch-json');
 
 // bot setup
 
