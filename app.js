@@ -25,8 +25,10 @@ var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
 
 // activity events
+/*
 bot.on('conversationUpdate', function (message) {
     // check for group
+
     if (message.address.conversation.isGroup) {
         if (message.membersAdded) {
             message.membersAdded.forEach(function (identity) {
@@ -58,6 +60,7 @@ bot.on('contactRelationUpdate', function (message) {
         //to do: delete their data
     }
 });
+*/
 
 // bot middleware
 bot.use(builder.Middleware.dialogVersion({ version: 1.0, resetCommand: /^reset/i }));
