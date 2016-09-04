@@ -97,7 +97,7 @@ intents.onBegin([
     }
 ]);
 
-intents.onDefault(builder.DialogAction.send("I'm sorry, I don't understand."));
+// intents.onDefault(builder.DialogAction.send("I'm sorry, I don't understand."));
 
 bot.dialog('/tellMe',  [
     function (session) {
