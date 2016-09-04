@@ -84,7 +84,7 @@ intents.matches('/^tell me about my gem/i', [
     }
 ]);
 
-intents.onBegin([
+intents.onDefault ([
     function (session, args, next) {
         if (!session.userData.name) {
             session.beginDialog('/profile');
