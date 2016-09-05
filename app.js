@@ -97,14 +97,14 @@ intents.onDefault ([
 //dialog.onDefault(builder.DialogAction.send("I'm sorry, I don't understand."));
 
 bot.dialog('/tellMe',  [
-    function (session, results) {
-        session.send('Working on %s', session.userData.name.toUpperCase());
+    function (session) {
+        builder.Prompts.text(session, 'Working on %s', session.userData.name.toUpperCase());
         switch(session.userData.name.toUpperCase()) {
             case 'STEVEN':
-                session.send("Steven is a human-gem hybrid");
+                builder.Prompts.text(session, "Steven is a human-gem hybrid");
                 break;
             default:
-                session.send("I don't know which gem you are.");
+                builder.Prompts.text(session, "I don't know which gem you are.");
                 break;
         }
     }
