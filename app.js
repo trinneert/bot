@@ -81,7 +81,7 @@ intents.matches('/^tell me about my gem/i', [
     }
 ]);
 
-intents.onBegin ([
+intents.onDefault ([
     function (session, args, next) {
         if (!session.userData.name) {
             session.beginDialog('/profile');
@@ -94,7 +94,7 @@ intents.onBegin ([
     }
 ]);
 
-dialog.onDefault(builder.DialogAction.send("I'm sorry, I don't understand."));
+//dialog.onDefault(builder.DialogAction.send("I'm sorry, I don't understand."));
 
 bot.dialog('/tellMe',  [
     function (session, results) {
