@@ -81,7 +81,7 @@ intents.matches('/^tell me about my gem/i', [
     }
 ]);
 
-intents.onDefault ([
+intents.onBegin ([
     function (session, args, next) {
         if (!session.userData.name) {
             session.beginDialog('/profile');
@@ -94,16 +94,18 @@ intents.onDefault ([
     }
 ]);
 
-// intents.onDefault(builder.DialogAction.send("I'm sorry, I don't understand."));
+dialog.onDefault(builder.DialogAction.send("I'm sorry, I don't understand."));
 
 bot.dialog('/tellMe',  [
-    function (session) {
+    function (session, results) {
+        session.send('Working on %s', session.userData.name.toUpperCase());
         switch(session.userData.name.toUpperCase()) {
             case 'STEVEN':
-                builder.prompts.text("Steven is a human-gem hybrid");
+                session.send("Steven is a human-gem hybrid");
                 break;
             default:
-                builder.prompts.text("I don't know which gem you are.");
+                session.send("I don't know which gem you are.");
+                break;
         }
     }
 ]);
