@@ -64,8 +64,15 @@ bot.use(builder.Middleware.dialogVersion({ version: 1.0, resetCommand: /^reset/i
 
 // bot dialogs
 var intents = new builder.IntentDialog();
-bot.dialog('/', intents);
+// bot.dialog('/', intents);
 
+bot.dialog('/', new builder.IntentDialog()
+    .matches(/^change gem/i, '/changeProfile')
+    .matches(/^about me/i, '/aboutMe')
+    .onDefault(builder.DialogAction.send("I'm sorry, but I don't understand."))
+);
+
+/*
 intents.matches(/^change gem/i, [
     function (session) {
         session.beginDialog('/changeProfile');
@@ -77,11 +84,13 @@ intents.matches(/^change gem/i, [
 
 intents.matches('/^about me/i', [
     function (session) {
+        session.send('Working on %s', session.userData.name);
         session.beginDialog('/aboutMe');
     }
 ]);
+*/
 
-intents.onDefault ([
+intents.onBegin ([
     function (session, args, next) {
         if (!session.userData.name) {
             session.beginDialog('/profile');
@@ -98,7 +107,7 @@ intents.onDefault ([
 
 bot.dialog('/aboutMe',  [
     function (session) {
-        //session.send('Working on %s', session.userData.name.toUpperCase());
+//        session.send('Working on %s', session.userData.name);
         switch(session.userData.name) {
             case "steven":
                 session.send('Steven is a human-gem hybrid');
@@ -116,6 +125,7 @@ bot.dialog('/changeProfile', [
     },
     function (session, results) {
         session.userData.name = results.response;
+        session.send('OK... changed your gem to %s', session.userData.name);
         session.endDialog();
     }
 ]);
