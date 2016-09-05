@@ -52,7 +52,7 @@ bot.on('conversationUpdate', function (message) {
 bot.on('contactRelationUpdate', function (message) {
     if (message.action === 'add') {
         var name = message.user ? message.user.name : null;
-        var reply = new builder.Message().address(message.address).text("Hellp %s... Thanks for adding me.  Say 'hi' to get started.", name || 'there');
+        var reply = new builder.Message().address(message.address).text("Hello %s... Thanks for adding me.  Say 'hi' to get started.", name || 'there');
         bot.send(reply);
     } else {
         //to do: delete their data
@@ -75,9 +75,9 @@ intents.matches(/^change gem/i, [
     }
 ]);
 
-intents.matches('/^tell me about my gem/i', [
+intents.matches('/^about me/i', [
     function (session) {
-        session.beginDialog('/tellMe');
+        session.beginDialog('/aboutMe');
     }
 ]);
 
@@ -96,15 +96,15 @@ intents.onDefault ([
 
 //dialog.onDefault(builder.DialogAction.send("I'm sorry, I don't understand."));
 
-bot.dialog('/tellMe',  [
+bot.dialog('/aboutMe',  [
     function (session) {
-        builder.Prompts.text(session, 'Working on %s', session.userData.name.toUpperCase());
-        switch(session.userData.name.toUpperCase()) {
-            case 'STEVEN':
-                builder.Prompts.text(session, "Steven is a human-gem hybrid");
+        //session.send('Working on %s', session.userData.name.toUpperCase());
+        switch(session.userData.name) {
+            case "steven":
+                session.send('Steven is a human-gem hybrid');
                 break;
             default:
-                builder.Prompts.text(session, "I don't know which gem you are.");
+                session.send("I don't know which gem you are.");
                 break;
         }
     }
