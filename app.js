@@ -114,14 +114,16 @@ bot.dialog('/aboutMe',  [
     function (session) {
         switch(session.userData.name.toUpperCase()) {
             case "STEVEN":
-                var cardSteven = new builder.HeroCard(session)
-                    .title("Steven Universe")
-                    .text("Steven is the son of Greg Universe and Rose Quartz. He is the only half-human, half-gem and has special powers.  His destiny is to protect humanity.")
-                    .images([
-                        builder.CardImage.create(session, "http://i.cdn.turner.com/v5cache/CARTOON/site/Images/i79/steven_steven_180x180.png") 
-                            .tap(builder.CardAction.openUrl(session, "http://fantendo.wikia.com/wiki/Steven_Universe")),
-                    ]);
-                var msgSteven = new builder.Message(session).attachments([cardSteven]);
+                var msgSteven = new builder.Message(session)
+                .attachments([
+                    new builder.HeroCard(session)
+                       .title("Steven Universe")
+                        .text("Steven is the son of Greg Universe and Rose Quartz. He is the only half-human, half-gem and has special powers.  His destiny is to protect humanity.")
+                        .images([
+                            builder.CardImage.create(session, "http://i.cdn.turner.com/v5cache/CARTOON/site/Images/i79/steven_steven_180x180.png") 
+                        ])        
+                        .tap(builder.CardAction.openUrl(session, "http://fantendo.wikia.com/wiki/Steven_Universe"))
+                ]);     
                 session.send(msgSteven);
                 session.endDialog();
                 break;
