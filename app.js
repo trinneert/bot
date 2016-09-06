@@ -92,7 +92,7 @@ intents.onBegin ([
 bot.dialog('/quit', [
     function(session) {
         session.sendTyping();
-        session.endConversation('OK, see you later!\n\n');
+        session.cancelDialog('OK, see you later!');
     }
 ]);
 
@@ -114,7 +114,11 @@ bot.dialog('/aboutMe',  [
     function (session) {
         switch(session.userData.name.toUpperCase()) {
             case "STEVEN":
-                session.send('Steven is a human-gem hybrid');
+                var cardSteven = new builder.HeroCard(session)
+                    .title("Steven Universe")
+                    .text("Steven Quartz Universe is the titular main protagonist of the show of the same name. He is the son of Greg Universe and Rose Quartz, and the first and only member of human descent and as well as a hybrid species of the protagonist team the Crystal Gems.")
+                    .images([builder.CardImage.create(session, "http://i.cdn.turner.com/v5cache/CARTOON/site/Images/i79/steven_steven_180x180.png"), 
+                    ]);
                 session.endDialog();
                 break;
             default:
