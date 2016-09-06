@@ -69,6 +69,7 @@ bot.dialog('/', new builder.IntentDialog()
     .matches(/^about me/i, '/aboutMe')
     .matches(/^help/i, '/help')
     .matches(/^hi/i, '/hi')
+    .matches(/^quit/i, '/quit')
     .onDefault(builder.DialogAction.send("I'm sorry, but I don't understand."))
 );
 
@@ -87,7 +88,13 @@ intents.onBegin ([
     }
 ]);
 
-//dialog.onDefault(builder.DialogAction.send("I'm sorry, I don't understand."));
+
+bot.dialog('/quit', [
+    function(session) {
+        session.send('OK, see you later!/n/n');
+        session.replaceDialog('/profile');
+    }
+]);
 
 bot.dialog('/hi', [
     function (session) {
