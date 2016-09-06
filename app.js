@@ -105,7 +105,7 @@ bot.dialog('/hi', [
 
 bot.dialog('/help', [
     function (session) {
-        session.send("You can say 'hi', 'change gem', 'about me', or 'help'");
+        session.send("You can say hi|change gem|about me|help|quit");
         session.endDialog();
     }
 ]);
