@@ -100,6 +100,8 @@ intents.onBegin ([
     },
     function (session, results) {
         session.send('Hello %s!', session.userData.name);
+        session.endDialog();
+
     }
 ]);
 
@@ -111,9 +113,11 @@ bot.dialog('/aboutMe',  [
         switch(session.userData.name) {
             case "steven":
                 session.send('Steven is a human-gem hybrid');
+                session.endDialog();
                 break;
             default:
                 session.send("I don't know which gem you are.");
+                session.endDialog();
                 break;
         }
     }
