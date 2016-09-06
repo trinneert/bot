@@ -91,11 +91,8 @@ intents.onBegin ([
 
 bot.dialog('/quit', [
     function(session) {
-        session.send('OK, see you later!\n\n');
-        session.replaceDialog('/profile');
         session.sendTyping();
-        session.send("Hi %s", session.userData.name);
-        session.endDialog();
+        session.endConversation('OK, see you later!\n\n');
     }
 ]);
 
