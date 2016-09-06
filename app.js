@@ -120,7 +120,7 @@ bot.dialog('/aboutMe',  [
                     .images([builder.CardImage.create(session, "http://i.cdn.turner.com/v5cache/CARTOON/site/Images/i79/steven_steven_180x180.png") 
                     ])
                     .buttons([
-                        builder.CardAction.create(session, "http://fantendo.wikia.com/wiki/Steven_Universe"),
+                        builder.CardAction.openUrl(session, "http://fantendo.wikia.com/wiki/Steven_Universe"),
                         builder.CardAction.imBack(session, "select:100", "Learn More")
                     ]);
                 var msgSteven = new builder.Message(session).attachments([cardSteven]);
