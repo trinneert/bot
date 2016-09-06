@@ -105,8 +105,8 @@ bot.dialog('/help', [
 
 bot.dialog('/aboutMe',  [
     function (session) {
-        switch(session.userData.name) {
-            case "steven":
+        switch(session.userData.name.toUpperCase()) {
+            case "STEVEN":
                 session.send('Steven is a human-gem hybrid');
                 session.endDialog();
                 break;
