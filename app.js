@@ -1,7 +1,6 @@
 ﻿
 var restify = require('restify');
 var builder = require('botbuilder');
-//require('launch-json');
 
 // bot setup
 
@@ -64,31 +63,14 @@ bot.use(builder.Middleware.dialogVersion({ version: 1.0, resetCommand: /^reset/i
 
 // bot dialogs
 var intents = new builder.IntentDialog();
-// bot.dialog('/', intents);
 
 bot.dialog('/', new builder.IntentDialog()
     .matches(/^change gem/i, '/changeProfile')
     .matches(/^about me/i, '/aboutMe')
+    .matches(/^help/i, '/help')
+    .matches(/^hi/i, '/hi')
     .onDefault(builder.DialogAction.send("I'm sorry, but I don't understand."))
 );
-
-/*
-intents.matches(/^change gem/i, [
-    function (session) {
-        session.beginDialog('/changeProfile');
-    },
-    function (session, results) {
-        session.send('OK... changed your gem to %s', session.userData.name);
-    }
-]);
-
-intents.matches('/^about me/i', [
-    function (session) {
-        session.send('Working on %s', session.userData.name);
-        session.beginDialog('/aboutMe');
-    }
-]);
-*/
 
 intents.onBegin ([
     function (session, args, next) {
@@ -107,9 +89,22 @@ intents.onBegin ([
 
 //dialog.onDefault(builder.DialogAction.send("I'm sorry, I don't understand."));
 
+bot.dialog('/hi', [
+    function (session) {
+        session.send("Hi %s", session.userData.name);
+        session.endDialog();
+    }
+]);
+
+bot.dialog('/help', [
+    function (session) {
+        session.send("You can say 'hi', 'change gem', 'about me', or 'help'");
+        session.endDialog();
+    }
+]);
+
 bot.dialog('/aboutMe',  [
     function (session) {
-//        session.send('Working on %s', session.userData.name);
         switch(session.userData.name) {
             case "steven":
                 session.send('Steven is a human-gem hybrid');
