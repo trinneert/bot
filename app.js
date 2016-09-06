@@ -116,7 +116,7 @@ bot.dialog('/aboutMe',  [
             case "STEVEN":
                 var cardSteven = new builder.HeroCard(session)
                     .title("Steven Universe")
-                    .text("Steven Quartz Universe is the titular main protagonist of the show of the same name. He is the son of Greg Universe and Rose Quartz, and the first and only member of human descent and as well as a hybrid species of the protagonist team the Crystal Gems.")
+                    .text("Steven Quartz Universe is the main character of the show. He is the son of Greg Universe and Rose Quartz.")
                     .images([builder.CardImage.create(session, "http://i.cdn.turner.com/v5cache/CARTOON/site/Images/i79/steven_steven_180x180.png"), 
                     ]);
                 var msgSteven = new builder.Message(session).attachments([card]);
