@@ -91,8 +91,11 @@ intents.onBegin ([
 
 bot.dialog('/quit', [
     function(session) {
-        session.send('OK, see you later!/n/n');
+        session.send('OK, see you later!\n\n');
         session.replaceDialog('/profile');
+        session.sendTyping();
+        session.send("Hi %s", session.userData.name);
+        session.endDialog();
     }
 ]);
 
@@ -105,7 +108,7 @@ bot.dialog('/hi', [
 
 bot.dialog('/help', [
     function (session) {
-        session.send("You can say hi|change gem|about me|help|quit");
+        session.send("You can say hi | change gem | about me | help | quit");
         session.endDialog();
     }
 ]);
