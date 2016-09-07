@@ -93,13 +93,16 @@ bot.dialog('/quit', [
     function(session) {
         session.sendTyping();
         session.send('OK, see you later!\n\n');
+/*
         builder.Prompts.text(session, 'Hi! Which gem are you?');
     },
     function (session, results) {
         session.userData.name = results.response;
         session.send('Hello %s!', session.userData.name);
+*/
         session.endDialog();
-    }
+  
+     }
 ]);
 
 bot.dialog('/hi', [
