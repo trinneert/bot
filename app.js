@@ -125,7 +125,7 @@ bot.dialog('/aboutMe',  [
                 .attachments([
                     new builder.HeroCard(session)
                        .title("Steven Universe")
-                        .text(prompts.stevenText)
+                        .text(gems.stevenText)
                         .images([
                             builder.CardImage.create(session, gems.stevenPic)
                             .tap(builder.CardAction.openUrl(session, gems.stevenUri))
