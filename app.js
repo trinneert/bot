@@ -1,7 +1,7 @@
 ﻿
 var restify = require('restify');
 var builder = require('botbuilder');
-var prompts = require('./gems');
+var prompts = require('./gems.js');
 
 // bot setup
 
@@ -125,8 +125,8 @@ bot.dialog('/aboutMe',  [
                 .attachments([
                     new builder.HeroCard(session)
                        .title("Steven Universe")
-                        .text(gems.stevenText)
-                        .images([
+                       .text(gems.stevenText)
+                       .images([
                             builder.CardImage.create(session, gems.stevenPic)
                             .tap(builder.CardAction.openUrl(session, gems.stevenUri))
                         ])        
