@@ -1,6 +1,7 @@
 ﻿
 var restify = require('restify');
 var builder = require('botbuilder');
+var prompts = require('./prompts');
 
 // bot setup
 
@@ -123,10 +124,10 @@ bot.dialog('/aboutMe',  [
                 .attachments([
                     new builder.HeroCard(session)
                        .title("Steven Universe")
-                        .text("Steven is the son of Greg Universe and Rose Quartz. He is the only half-human, half-gem and has special powers.")
+                        .text(prompts.stevenText)
                         .images([
-                            builder.CardImage.create(session, "http://i.cdn.turner.com/v5cache/CARTOON/site/Images/i79/steven_steven_180x180.png")
-                            .tap(builder.CardAction.openUrl(session, "http://fantendo.wikia.com/wiki/Steven_Universe"))
+                            builder.CardImage.create(session, prompts.stevenPic)
+                            .tap(builder.CardAction.openUrl(session, prompts.stevenUri))
                         ])        
                 ]);     
                 session.send(msgSteven);
