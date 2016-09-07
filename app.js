@@ -1,7 +1,7 @@
 ﻿
 var restify = require('restify');
 var builder = require('botbuilder');
-var prompts = require('./prompts');
+var prompts = require('./gems');
 
 // bot setup
 
@@ -93,13 +93,11 @@ bot.dialog('/quit', [
     function(session) {
         session.sendTyping();
         session.send('OK, see you later!\n\n');
-/*
         builder.Prompts.text(session, 'Hi! Which gem are you?');
     },
     function (session, results) {
         session.userData.name = results.response;
         session.send('Hello %s!', session.userData.name);
-*/
         session.endDialog();
   
      }
@@ -129,8 +127,8 @@ bot.dialog('/aboutMe',  [
                        .title("Steven Universe")
                         .text(prompts.stevenText)
                         .images([
-                            builder.CardImage.create(session, prompts.stevenPic)
-                            .tap(builder.CardAction.openUrl(session, prompts.stevenUri))
+                            builder.CardImage.create(session, gems.stevenPic)
+                            .tap(builder.CardAction.openUrl(session, gems.stevenUri))
                         ])        
                 ]);     
                 session.send(msgSteven);
