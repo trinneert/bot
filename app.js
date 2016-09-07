@@ -1,7 +1,7 @@
 ﻿
 var restify = require('restify');
 var builder = require('botbuilder');
-var prompts = require('./gems.js');
+var gems = require('./gems.js');
 
 // bot setup
 
