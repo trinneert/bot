@@ -84,7 +84,6 @@ intents.onBegin ([
     function (session, results) {
         session.send('Hello %s!', session.userData.name);
         session.endDialog();
-
     }
 ]);
 
@@ -92,7 +91,13 @@ intents.onBegin ([
 bot.dialog('/quit', [
     function(session) {
         session.sendTyping();
-        session.cancelDialog('OK, see you later!');
+        session.send('OK, see you later!\n\n');
+        builder.Prompts.text(session, 'Hi! Which gem are you?');
+    },
+    function (session, results) {
+        session.userData.name = results.response;
+        session.send('Hello %s!', session.userData.name);
+        session.endDialog();
     }
 ]);
 
