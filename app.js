@@ -112,7 +112,7 @@ bot.dialog('/hi', [
 
 bot.dialog('/help', [
     function (session) {
-        session.send("You can say hi | change gem | about me | help | quit");
+        session.send("You can say:\n\n hi | change gem | about me | help | quit");
         session.endDialog();
     }
 ]);
@@ -134,6 +134,118 @@ bot.dialog('/aboutMe',  [
                 session.send(msgSteven);
                 session.endDialog();
                 break;
+            case "GARNET":
+                var msgGarnet = new builder.Message(session)
+                .attachments([
+                    new builder.HeroCard(session)
+                    .title("Garnet")
+                    .text(gems.garnetText)
+                    .images([
+                        builder.CardImage.create(session, gems.garnetPic)
+                        .tap(builder.CardAction.openUrl(session, gems.garnetUri))
+                    ])
+                ]);
+                session.send(msgGarnet);
+                session.endDialog();
+            case "Pearl":
+                var msgPearl = new builder.Message(session)
+                .attachments([
+                    new builder.HeroCard(session)
+                    .title("Pearl")
+                    .text(gems.pearlText)
+                    .images([
+                        builder.CardImage.create(session, gems.pearlPic)
+                        .tap(builder.CardAction.openUrl(session, gems.pearlUri))
+                    ])
+                ]);
+            case "Lapis Lazuli":
+                var msgLapis = new builder.Message(session)
+                .attachments([
+                    new builder.HeroCard(session)
+                    .title("Lapis Lazuli")
+                    .text(gems.lapisText)
+                    .images([
+                        builder.CardImage.create(session, gems.lapisPic)
+                        .tap(builder.CardAction.openUrl(session, gems.lapisUri))
+                    ])
+                ]);
+            case "Peridot":
+                var msgPeridot = new builder.Message(session)
+                .attachments([
+                    new builder.HeroCard(session)
+                    .title("Peridot")
+                    .text(gems.peridotText)
+                    .images([
+                        builder.CardImage.create(session, gems.peridotPic)
+                        .tap(builder.CardAction.openUrl(session, gems.peridotUri))
+                    ])
+                ]);
+            case "Amethyst":
+                var msgAmethyst = new builder.Message(session)
+                .attachements([
+                    new builder.HeroCard(session)
+                    .title("Amythest")
+                    .text(gems.amethystText)
+                    .images([
+                        builder.CardImage.create(session, gems.amethystPic)
+                        .tap(builder.CardAction.openUrl(session, gems.amethystUri))
+                    ])
+                ]);
+            case "Jasper":
+                var msgAmethyst = new builder.Message(session)
+                .attachements([
+                    new builder.HeroCard(session)
+                    .title("Jasper")
+                    .text(gems.jasperText)
+                    .images([
+                        builder.CardImage.create(session, gems.jasperPic)
+                        .tap(builder.CardAction.openUrl(session, gems.jasperUri))
+                    ])
+                ]);
+            case "Connie":
+                var msgConnie = new builder.Message(session)
+                .attachements([
+                    new builder.HeroCard(session)
+                    .title("Connie")
+                    .text(gems.connieText)
+                    .images([
+                        builder.CardImage.create(session, gems.conniePic)
+                        .tap(builder.CardAction.openUrl(session, gems.connieUri))
+                    ])
+                ]);
+            case "Sadie":
+                var msgSadie = new builder.Message(session)
+                .attachements([
+                    new builder.HeroCard(session)
+                    .title("Sadie")
+                    .text(gems.sadieText)
+                    .images([
+                        builder.CardImage.create(session, gems.sadiePic)
+                        .tap(builder.CardAction.openUrl(session, gems.sadieUri))
+                    ])
+                ]);
+            case "Lars":
+                var msgLars = new builder.Message(session)
+                .attachements([
+                    new builder.HeroCard(session)
+                    .title("Lars")
+                    .text(gems.larsText)
+                    .images([
+                        builder.CardImage.create(session, gems.larsPic)
+                        .tap(builder.CardAction.openUrl(session, gems.larsUri))
+                    ])
+                ]);
+            case "Greg":
+                var msgGreg = new builder.Message(session)
+                .attachements([
+                    new builder.HeroCard(session)
+                    .title("Greg")
+                    .text(gems.gregText)
+                    .images([
+                        builder.CardImage.create(session, gems.gregPic)
+                        .tap(builder.CardAction.openUrl(session, gems.gregUri))
+                    ])
+                ]);
             default:
                 session.send("I don't know which gem you are.");
                 session.endDialog();
@@ -144,11 +256,11 @@ bot.dialog('/aboutMe',  [
 
 bot.dialog('/changeProfile', [
     function (session) {
-        builder.Prompts.text(session, 'OK, Which gem are you now?');
+        builder.Prompts.text(session, 'Ok. Which gem are you now?');
     },
     function (session, results) {
         session.userData.name = results.response;
-        session.send('OK... changed your gem to %s', session.userData.name);
+        session.send('Ok... changed your gem to %s', session.userData.name);
         session.endDialog();
     }
 ]);
