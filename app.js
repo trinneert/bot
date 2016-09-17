@@ -147,7 +147,7 @@ bot.dialog('/aboutMe',  [
                 ]);
                 session.send(msgGarnet);
                 session.endDialog();
-            case "PEAR":
+            case "PEARL":
                 var msgPearl = new builder.Message(session)
                 .attachments([
                     new builder.HeroCard(session)
@@ -274,3 +274,4 @@ bot.dialog('/profile', [
         session.endDialog();
     }
 ]);
+S
