@@ -147,7 +147,7 @@ bot.dialog('/aboutMe',  [
                 ]);
                 session.send(msgGarnet);
                 session.endDialog();
-            case "Pearl":
+            case "PEAR":
                 var msgPearl = new builder.Message(session)
                 .attachments([
                     new builder.HeroCard(session)
@@ -158,7 +158,7 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.pearlUri))
                     ])
                 ]);
-            case "Lapis Lazuli":
+            case "LAPIS LAZULI":
                 var msgLapis = new builder.Message(session)
                 .attachments([
                     new builder.HeroCard(session)
@@ -169,7 +169,7 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.lapisUri))
                     ])
                 ]);
-            case "Peridot":
+            case "PERIDOT":
                 var msgPeridot = new builder.Message(session)
                 .attachments([
                     new builder.HeroCard(session)
@@ -180,9 +180,9 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.peridotUri))
                     ])
                 ]);
-            case "Amethyst":
+            case "AMETHEST":
                 var msgAmethyst = new builder.Message(session)
-                .attachements([
+                .attachments([
                     new builder.HeroCard(session)
                     .title("Amythest")
                     .text(gems.amethystText)
@@ -191,9 +191,9 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.amethystUri))
                     ])
                 ]);
-            case "Jasper":
+            case "JASPER":
                 var msgAmethyst = new builder.Message(session)
-                .attachements([
+                .attachments([
                     new builder.HeroCard(session)
                     .title("Jasper")
                     .text(gems.jasperText)
@@ -202,9 +202,9 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.jasperUri))
                     ])
                 ]);
-            case "Connie":
+            case "CONNIE":
                 var msgConnie = new builder.Message(session)
-                .attachements([
+                .attachments([
                     new builder.HeroCard(session)
                     .title("Connie")
                     .text(gems.connieText)
@@ -213,9 +213,9 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.connieUri))
                     ])
                 ]);
-            case "Sadie":
+            case "SADIE":
                 var msgSadie = new builder.Message(session)
-                .attachements([
+                .attachments([
                     new builder.HeroCard(session)
                     .title("Sadie")
                     .text(gems.sadieText)
@@ -224,9 +224,9 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.sadieUri))
                     ])
                 ]);
-            case "Lars":
+            case "LARS":
                 var msgLars = new builder.Message(session)
-                .attachements([
+                .attachments([
                     new builder.HeroCard(session)
                     .title("Lars")
                     .text(gems.larsText)
@@ -235,9 +235,9 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.larsUri))
                     ])
                 ]);
-            case "Greg":
+            case "GREG":
                 var msgGreg = new builder.Message(session)
-                .attachements([
+                .attachments([
                     new builder.HeroCard(session)
                     .title("Greg")
                     .text(gems.gregText)
