@@ -147,6 +147,7 @@ bot.dialog('/aboutMe',  [
                 ]);
                 session.send(msgGarnet);
                 session.endDialog();
+                break;
             case "PEARL":
                 var msgPearl = new builder.Message(session)
                 .attachments([
@@ -158,6 +159,9 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.pearlUri))
                     ])
                 ]);
+                session.send(msgPearl);
+                session.endDialog();
+                break;
             case "LAPIS LAZULI":
                 var msgLapis = new builder.Message(session)
                 .attachments([
@@ -169,6 +173,9 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.lapisUri))
                     ])
                 ]);
+                session.send(msgLapis);
+                session.endDialog();
+                break;
             case "PERIDOT":
                 var msgPeridot = new builder.Message(session)
                 .attachments([
@@ -180,6 +187,9 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.peridotUri))
                     ])
                 ]);
+                session.send(msgPeridot);
+                session.endDialog();
+                break;
             case "AMETHEST":
                 var msgAmethyst = new builder.Message(session)
                 .attachments([
@@ -191,8 +201,11 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.amethystUri))
                     ])
                 ]);
+                session.send(msgAmethyst);
+                session.endDialog();
+                break;
             case "JASPER":
-                var msgAmethyst = new builder.Message(session)
+                var msgJasper = new builder.Message(session)
                 .attachments([
                     new builder.HeroCard(session)
                     .title("Jasper")
@@ -202,6 +215,9 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.jasperUri))
                     ])
                 ]);
+                session.send(msgJasper);
+                session.endDialog();
+                break;
             case "CONNIE":
                 var msgConnie = new builder.Message(session)
                 .attachments([
@@ -213,6 +229,9 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.connieUri))
                     ])
                 ]);
+                session.send(msgConnie);
+                session.endDialog();
+                break;
             case "SADIE":
                 var msgSadie = new builder.Message(session)
                 .attachments([
@@ -224,6 +243,9 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.sadieUri))
                     ])
                 ]);
+                session.send(msgSadie);
+                session.endDialog();
+                break;
             case "LARS":
                 var msgLars = new builder.Message(session)
                 .attachments([
@@ -235,6 +257,9 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.larsUri))
                     ])
                 ]);
+                session.send(msgLars);
+                session.endDialog();
+                break;
             case "GREG":
                 var msgGreg = new builder.Message(session)
                 .attachments([
@@ -246,6 +271,9 @@ bot.dialog('/aboutMe',  [
                         .tap(builder.CardAction.openUrl(session, gems.gregUri))
                     ])
                 ]);
+                session.send(msgGreg);
+                session.endDialog();
+                break;
             default:
                 session.send("I don't know which gem you are.");
                 session.endDialog();
