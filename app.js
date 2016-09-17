@@ -134,6 +134,7 @@ bot.dialog('/aboutMe',  [
                 session.send(msgSteven);
                 session.endDialog();
                 break;
+  /*
             case "GARNET":
                 var msgGarnet = new builder.Message(session)
                 .attachments([
@@ -274,6 +275,7 @@ bot.dialog('/aboutMe',  [
                 session.send(msgGreg);
                 session.endDialog();
                 break;
+   */
             default:
                 session.send("I don't know which gem you are.");
                 session.endDialog();
