@@ -136,7 +136,8 @@ bot.dialog('/aboutGems', [
                     .images([
                         builder.CardImage.create(session, gems.garnetPic)
                     ])
-            ]);      
+            ]);
+        session.endDialog();
     }
 ]);
 
