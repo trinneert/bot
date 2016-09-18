@@ -68,10 +68,12 @@ var intents = new builder.IntentDialog();
 bot.dialog('/', new builder.IntentDialog()
     .matches(/^change gem/i, '/changeProfile')
     .matches(/^about me/i, '/aboutMe')
+    .matches(/^about gems/i, '/aboutGems')
+    .matches(/^tell me more/i, '/tellMeMore')
     .matches(/^help/i, '/help')
     .matches(/^hi/i, '/hi')
     .matches(/^quit/i, '/quit')
-    .onDefault(builder.DialogAction.send("I'm sorry, but I don't understand."))
+    .onDefault(builder.DialogAction.send("I'm sorry, but I don't understand. Try saying 'help'"))
 );
 
 intents.onBegin ([
@@ -114,6 +116,26 @@ bot.dialog('/help', [
     function (session) {
         session.send("You can say:\n\n hi | change gem | about me | help | quit");
         session.endDialog();
+    }
+]);
+
+bot.dialog('/aboutGems', [
+    function (session) {
+        var msgGems = new builder.Message(session)
+            .textFormat(builder.textFormat.xml)
+            .attachmentLayout(builder.AttachmentLayout.carousel)
+            .attachments([
+                new builder.ThumbnailCard(session)
+                    .title("Steven Universe")
+                    .images([
+                        builder.CardImage.create(session, gems.stevenPic)
+                    ]),
+                new builder/ThumbnailCard(session)
+                    .title("Garnet")
+                    .images([
+                        builder.CardImage.create(session, gems.garnetPic)
+                    ])
+            ]);      
     }
 ]);
 
@@ -162,7 +184,7 @@ bot.dialog('/aboutMe',  [
                 session.send(msgPearl);
                 session.endDialog();
                 break;
-            case "LAPIS LAZULI":
+            case "LAPIS":
                 var msgLapis = new builder.Message(session)
                 .attachments([
                     new builder.HeroCard(session)
