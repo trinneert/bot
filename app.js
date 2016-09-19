@@ -121,9 +121,9 @@ bot.dialog('/help', [
 
 bot.dialog('/aboutGems', [
     function (session) {
-        session.send("Here are the gems that we know about.");
+        session.send("Here are some of the gems that I know about.");
         var msgGems = new builder.Message(session)
-            .textFormat(builder.textFormat.xml)
+//            .textFormat(builder.textFormat.xml)
             .attachmentLayout(builder.AttachmentLayout.carousel)
             .attachments([
                 new builder.ThumbnailCard(session)
@@ -137,6 +137,7 @@ bot.dialog('/aboutGems', [
                         builder.CardImage.create(session, gems.garnetPic)
                     ])
             ]);
+        session.sen(msgGems);
         session.endDialog();
     }
 ]);
