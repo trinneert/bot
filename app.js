@@ -114,9 +114,27 @@ bot.dialog('/hi', [
 
 bot.dialog('/help', [
     function (session) {
-        session.send("You can say:\n\n hi | change gem | about me | help | quit");
+        session.send("You can say:\n\n hi | change gem | about gems | about me | help | donate | quit");
         session.endDialog();
     }
+]);
+
+bot.dialog('/donate', [
+    function(session) {
+        var msgDonate = new builder.ReceiptCard(session)
+            .title('Help fund this bot')
+            .facts([
+                builder.facts.create(session, 'PayPal', 'Payment method')
+            ])
+            .items([
+                builder.ReceiptItem.create(session, '$1.00', 'Donation')
+            ])
+            .tax('$0.00')
+            .total('$1.00')
+            .buttons([
+                builder.CardAction.openUrl(session, 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4Z9M75GEL9CAY', 'Donate')
+            ]); 
+    }        
 ]);
 
 bot.dialog('/aboutGems', [
