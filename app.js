@@ -66,6 +66,7 @@ bot.use(builder.Middleware.dialogVersion({ version: 1.0, resetCommand: /^reset/i
 var intents = new builder.IntentDialog();
 
 bot.dialog('/', new builder.IntentDialog()
+    .matches(/^donate/i, '/donate')
     .matches(/^change gem/i, '/changeProfile')
     .matches(/^about me/i, '/aboutMe')
     .matches(/^about gems/i, '/aboutGems')
