@@ -123,13 +123,15 @@ bot.dialog('/aboutGems', [
     function (session) {
         session.send("Here are some of the gems that I know about.");
         var msgGems = new builder.Message(session)
-//            .textFormat(builder.textFormat.xml)
             .attachmentLayout(builder.AttachmentLayout.carousel)
             .attachments([
                 new builder.ThumbnailCard(session)
                     .title("Steven Universe")
                     .images([
                         builder.CardImage.create(session, gems.stevenPic)
+                    ])
+                    .buttons([
+                        builder.CardAction.openUrl(session, gems.stevenUri, "More Info")
                     ]),
                 new builder.ThumbnailCard(session)
                     .title("Garnet")
