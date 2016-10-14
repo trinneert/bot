@@ -125,10 +125,10 @@ bot.dialog('/donate', [
         var msgDonate = new builder.ReceiptCard(session)
             .title('Help fund this bot')
             .facts([
-                builder.facts.create(session, 'PayPal', 'Payment method')
+                builder.facts.create(session, 'PayPal', 'Payment method'),
             ])
             .items([
-                builder.ReceiptItem.create(session, '$1.00', 'Donation')
+                builder.ReceiptItem.create(session, '$1.00', 'Donation'),
             ])
             .tax('$0.00')
             .total('$1.00')
