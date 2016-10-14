@@ -1,7 +1,7 @@
 module.exports = {
     stevenText: "Steven is the son of Greg Universe and Rose Quartz. He is the only half-human, half-gem and has special powers.",
     stevenPic: "http://i.cdn.turner.com/v5cache/CARTOON/site/Images/i79/steven_steven_180x180.png",
-    stevenUri: "http://fantendo.wikia.com/wiki/Steven_Universe",
+    stevenUri: "https://fantendo.wikia.com/wiki/Steven_Universe",
     garnetText: "Garnet is a fusion of the gems Ruby and Sapphire. She is the protector of the group. Also known as 'Square Mom'.",
     garnetPic: "http://womenwriteaboutcomics.com/wp-content/uploads/2014/09/su-garnet.jpg",
     garnetUri: "http://steven-universe.wikia.com/wiki/Garnet",
@@ -17,11 +17,6 @@ module.exports = {
     amethystText: "Amethyst is a gem that was made on Earth. She hates herself, but that makes her try harder to be adiquite. She is kind and a good friend.",
     amythystPic: "http://womenwriteaboutcomics.com/wp-content/uploads/2014/09/su-amethyst.jpg",
     amethystUri: "http://steven-universe.wikia.com/wiki/Amethyst",
-    /*  took out 1, so 2 carousels could show the whole group
-    jasperText: "Big Buff Cheeto Puff. She thinks Steven is Rose. she is now corrupted, she once fused with Lapis.",
-    jasperPic: "http://img4.wikia.nocookie.net/__cb20150420235437/villains/images/7/7c/Jasper_Finish.png",
-    jasperUri: "http://steven-universe.wikia.com/wiki/Jasper",
-    */
     connieText: "Connie is Steven's best friend. She's smart, she used to have glasses but Steven healed her. She is a human.",
     conniePic: "http://38.media.tumblr.com/770df48333f107744ae6aa556d8d1d83/tumblr_nlhezxlAiP1tkhqtso2_250.gif",
     connieUri: "http://steven-universe.wikia.com/wiki/Connie",
