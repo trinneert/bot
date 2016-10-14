@@ -134,7 +134,8 @@ bot.dialog('/donate', [
             .total('$1.00')
             .buttons([
                 builder.CardAction.openUrl(session, 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4Z9M75GEL9CAY', 'Donate')
-            ]); 
+            ]);
+    session.endDialog(msgDonate);
     }        
 ]);
 
