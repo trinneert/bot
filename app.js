@@ -138,6 +138,33 @@ bot.dialog('/aboutGems', [
                     .images([
                         builder.CardImage.create(session, gems.garnetPic)
                     ])
+                    .buttons([
+                        builder.CardAction.openUrl(session, gems.garnetUri, "More Info")
+                    ]),
+                new builder.ThumbnailCard(session)
+                    .title("Pearl")
+                    .images([
+                        builder.CardImage.create(session, gems.pearlPic)
+                    ])
+                    .buttons([
+                        builder.CardAction.openUrl(session, gems.pearlUri, "More Info")
+                    ]),
+                new builder.ThumbnailCard(session)
+                    .title("Lapis")
+                    .images([
+                        builder.CardImage.create(session, gems.lapisPic)
+                    ])
+                    .buttons([
+                        builder.CardAction.openUrl(session, gems.lapisUri, "More Info")
+                    ]),
+                new builder.ThumbnailCard(session)
+                    .title("Peridot")
+                    .images([
+                        builder.CardImage.create(session, gems.peridotPic)
+                    ])
+                    .buttons([
+                        builder.CardAction.openUrl(session, gems.peridotUri, "More Info")
+                    ])                                                            
             ]);
         session.endDialog(msgGems);
     }
