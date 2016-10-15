@@ -130,7 +130,7 @@ bot.dialog('/donate', [
                     builder.Fact.create(session, 'PayPal', 'Payment method')
                 ])
                 .items([
-                    builder.ReceiptItem.create(session, '$1.00', 'Donation')
+                    builder.ReceiptItem.create(session, '$1.00', 'Donation').image(builder.CardImage.create(session, gems.stevenPic))
                 ])
                 .tax('$0.00')
                 .total('$1.00')
