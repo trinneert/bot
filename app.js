@@ -127,7 +127,7 @@ bot.dialog('/donate', [
             new builder.ReceiptCard(session)
                 .title('Help fund this bot')
                 .facts([
-                    builder.facts.create(session, 'PayPal', 'Payment method')
+                    builder.Fact.create(session, 'PayPal', 'Payment method')
                 ])
                 .items([
                     builder.ReceiptItem.create(session, '$1.00', 'Donation')
