@@ -146,7 +146,7 @@ bot.dialog('/donate', [
                 .total('$1.00')
                 .buttons([
                     builder.CardAction.openUrl(session, 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4Z9M75GEL9CAY', 'PayPal'),
-                    builder.CardAction.apply(session, 'http://trinneer.azurewebsites.net/pay', 'Stripe')
+                    builder.CardAction.openurl(session, 'http://trinneer.azurewebsites.net/pay', 'Stripe')
                 ])
         ]);        
         session.endDialog(msgDonate);
