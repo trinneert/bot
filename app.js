@@ -163,6 +163,8 @@ bot.dialog('/aboutGems', [
                     .title("Steven Universe")
                     .images([
                         builder.CardImage.create(session, gems.stevenPic)
+                        .tap(builder.CardAction.openUrl(session, gems.stevenUri))
+
                     ])
                     .buttons([
                         builder.CardAction.openUrl(session, gems.stevenUri, "More Info")
