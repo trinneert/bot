@@ -1,10 +1,20 @@
-﻿
+﻿// module dependencies
 var restify = require('restify');
 var builder = require('botbuilder');
 var gems = require('./gems.js');
+var routes = require('./routes');
+const bodyParser = require('body-parser');
+
+//stripe
+const keyPublishable = process.env.PUBLISHABLE_KEY;
+const keySecret = process.env.SECRET_KEY;
+const stripe = require('stripe')(keySecret);
+
+// environments
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // bot setup
-
 // setup restify server
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function () {
@@ -135,7 +145,8 @@ bot.dialog('/donate', [
                 .tax('$0.00')
                 .total('$1.00')
                 .buttons([
-                    builder.CardAction.openUrl(session, 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4Z9M75GEL9CAY', 'Donate')
+                    builder.CardAction.openUrl(session, 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4Z9M75GEL9CAY', 'PayPal'),
+                    builder.CardAction.apply(session, 'http://trinneer.azurewebsites.net/pay', 'Stripe')
                 ])
         ]);        
         session.endDialog(msgDonate);
