@@ -1,7 +1,7 @@
 module.exports = {
     stevenText: "Steven is the son of Greg Universe and Rose Quartz. He is the only half-human, half-gem and has special powers.",
     stevenPic: "https://i.cdn.turner.com/v5cache/CARTOON/site/Images/i79/steven_steven_180x180.png",
-    stevenUri: "https://fantendo.wikia.com/wiki/Steven_Universe",
+    stevenUri: "https://steven-universe.wikia.com/wiki/Steven_Universe_(character)",
     garnetText: "Garnet is a fusion of the gems Ruby and Sapphire. She is the protector of the group. Also known as 'Square Mom'.",
     garnetPic: "https://vignette2.wikia.nocookie.net/steven-universe/images/9/9a/NewGarnetPose.png/revision/latest/scale-to-width/180?cb=20150504221901",
     garnetUri: "https://steven-universe.wikia.com/wiki/Garnet",

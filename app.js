@@ -2,17 +2,6 @@
 var restify = require('restify');
 var builder = require('botbuilder');
 var gems = require('./gems.js');
-//var routes = require('./routes');
-//const bodyParser = require('body-parser');
-
-//stripe
-//const keyPublishable = process.env.PUBLISHABLE_KEY;
-//const keySecret = process.env.SECRET_KEY;
-//const stripe = require('stripe')(keySecret);
-
-// environments
-//app.use(bodyParser.urlencoded({ extended: true }));
-//app.use(bodyParser.json());
 
 // bot setup
 // setup restify server
