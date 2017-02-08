@@ -8,7 +8,7 @@ module.exports = {
     pearlText: "Pearl is the salty, hopeless space lesbian. She was deeply in love with Steven's mom and will protect Steven at all costs. Also known as 'Bird Mom'.",
     pearlPic: "https://static.tvtropes.org/pmwiki/pub/images/pearl_ii_6893.png",
     pearlUri: "https://steven-universe.wikia.com/wiki/Pearl",
-    lapisText: "Lapis is a Homeoworld gem who was trapped in a mirror during the wars over earth. She is a precious cinomin roll.",
+    lapisText: "Lapis is a Homeworld gem who was trapped in a mirror during the wars over earth. She is a precious cinnamon roll.",
     lapisPic: "https://vignette2.wikia.nocookie.net/steven-universe/images/6/6c/Lapis(1).png/revision/latest?cb=20150321125218",
     lapisUri: "https://steven-universe.wikia.com/wiki/Lapis",
     peridotText: "Peridot was once a threat to the Crystal Gem, but she is now a Crystal Gem herself. Her favorite word is 'CLOD'.",

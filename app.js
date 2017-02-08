@@ -126,7 +126,7 @@ bot.dialog('/donate', [
             new builder.ReceiptCard(session)
                 .title('Help fund this bot')
                 .facts([
-                    builder.Fact.create(session, 'PayPal', 'Payment method')
+                    builder.Fact.create(session, 'Select below', 'Payment method')
                 ])
                 .items([
                     builder.ReceiptItem.create(session, '$1.00', 'Donation').image(builder.CardImage.create(session, gems.stevenPic))
