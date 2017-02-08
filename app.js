@@ -78,7 +78,7 @@ bot.dialog('/', new builder.IntentDialog()
 
 intents.onBegin ([
     function (session, args, next) {
-        if (!session.userData.name) {
+        if (session.userData.name == null) {
             session.beginDialog('/profile');
         } else {
             next();
@@ -106,11 +106,11 @@ bot.dialog('/quit', [
 ]);
 
 bot.dialog('/hi', [
-    function (session, results) {
-        if (session.userData.name == null) {
-            builder.Prompts.text(session, "Hi! Which gem are you? \n\n For example, you can say: Steven | Greg | Lapis | Garnet");
-            session.userData.name = results.response;
-        }
+    function (session) {
+//        if (session.userData.name == null) {
+//            builder.Prompts.text(session, "Hi! Which gem are you? \n\nFor example, you can say: Steven | Greg | Lapis | Garnet");
+//            session.userData.name = results.response;
+//        }
         session.send("Hi %s", session.userData.name);
         session.endDialog();
     }
