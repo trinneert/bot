@@ -113,6 +113,7 @@ bot.dialog('/hi', [
 //    },
     function (session) {
         session.send("Hi %s", session.userData.name);
+        session.endDialog();
     }
 ]);
 
