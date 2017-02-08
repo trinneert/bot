@@ -353,7 +353,7 @@ bot.dialog('/aboutMe',  [
                 session.endDialog();
                 break;
             default:
-                session.send("I don't know which gem you are. \n\n For example, you can be: Steven | Greg | Lapis | Garnet /n/n Say 'change gem' to change your name");
+                session.send("I don't know which gem you are. \n\n For example, you can be: Steven | Greg | Lapis | Garnet \n\n Say 'change gem' to change your name");
                 session.endDialog();
                 break;
         }
