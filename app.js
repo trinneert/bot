@@ -106,7 +106,11 @@ bot.dialog('/quit', [
 ]);
 
 bot.dialog('/hi', [
-    function (session) {
+    function (session, results) {
+        if (session.userData.name == null) {
+            builder.Prompts.text(session, "Hi! Which gem are you? \n\n For example, you can say: Steven | Greg | Lapis | Garnet");
+            session.userData.name = results.response;
+        }
         session.send("Hi %s", session.userData.name);
         session.endDialog();
     }
@@ -353,7 +357,7 @@ bot.dialog('/aboutMe',  [
                 session.endDialog();
                 break;
             default:
-                session.send("I don't know which gem you are.");
+                session.send("I don't know which gem you are. \n\n For example, you can be: Steven | Greg | Lapis | Garnet");
                 session.endDialog();
                 break;
         }
@@ -373,7 +377,7 @@ bot.dialog('/changeProfile', [
 
 bot.dialog('/profile', [
     function (session) {
-        builder.Prompts.text(session, 'Hi! Which gem are you?');
+        builder.Prompts.text(session, 'Hi! Which gem are you? \n\n For example, you can say: Steven | Greg | Lapis | Garnet');
     },
     function (session, results) {
         session.userData.name = results.response;
