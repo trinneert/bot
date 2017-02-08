@@ -108,13 +108,22 @@ bot.dialog('/quit', [
 bot.dialog('/hi', [
     function (session, results) {
         if (session.userData.name == undefined) {
-            builder.Prompts.text(session, "Hi! Which gem are you? \n\nFor example, you can say: Steven | Greg | Lapis | Garnet");
+            session.beginDialog('/askName');
             session.userData.name = results.response;
         }
     },
     function (session) {
         session.send("Hi %s", session.userData.name);
         session.endDialog();
+    }
+]);
+
+bot.dialog('/askName' [
+    function (session) {
+        builder.Prompts.text(session, "Hi! Which gem are you? \n\nFor example, you can say: Steven | Greg | Lapis | Garnet");
+    },
+    function (session, results) {
+        session.endDialogWishResults(results);
     }
 ]);
 
